@@ -1,0 +1,9 @@
+.navbar {
+    display: flex;
+    border-bottom: black;
+}
+.navbar-links-item {
+    display: inline-block;
+    margin: 0;
+    padding: 10px;
+}
