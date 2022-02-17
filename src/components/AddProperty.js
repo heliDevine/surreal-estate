@@ -1,3 +1,4 @@
+import axios from 'axios';
 import { React, useState } from 'react';
 import '../styles/AddProperty.css';
 
@@ -17,21 +18,34 @@ const AddProperty = () => {
 
     const handleAddProperty = event => {
         event.preventDefault();
-        console.log(fields);
+
+        axios
+            .post('http://localhost:4000/api/v1/PropertyListing', {
+                fields,
+            })
+            .then(res => {
+                console.log(res);
+                console.log(res.fields);
+                console.log(fields);
+            })
+            .catch(err => {
+                console.log(err);
+            });
     };
     const handleFieldChange = event => {
         setFields({ ...fields, [event.target.name]: event.target.value });
     };
 
     return (
-        <div className="AddProperty">
+        <div className="properties">
             Add Property Page
-            <form onSubmit={handleAddProperty}>
+            <form className="properties-grid" onSubmit={handleAddProperty}>
                 <label htmlFor="title">
                     Title
                     <input
                         id="title"
                         name="title"
+                        placeholder="name of the property"
                         type="text"
                         value={fields.title}
                         onChange={handleFieldChange}
@@ -66,6 +80,7 @@ const AddProperty = () => {
                     <input
                         id="bathrooms"
                         name="bathrooms"
+                        placeholder="bathrooms"
                         type="number"
                         value={fields.bathrooms}
                         onChange={handleFieldChange}
@@ -76,16 +91,18 @@ const AddProperty = () => {
                     <input
                         id="price"
                         name="price"
+                        placeholder="price"
                         type="number"
                         value={fields.price}
                         onChange={handleFieldChange}
                     />
                 </label>
                 <label htmlFor="email">
-                    Price
+                    Email
                     <input
                         id="email"
                         name="email"
+                        placeholder="email"
                         type="email"
                         value={fields.email}
                         onChange={handleFieldChange}
