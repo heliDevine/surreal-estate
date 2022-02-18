@@ -1,7 +1,4 @@
 import React from 'react';
 
-const Properties = () => {
-    return <div className="properties">Properties Page</div>;
-};
-
+const Properties = () => <div>Properties Page</div>;
 export default Properties;

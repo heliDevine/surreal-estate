@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { React, useState } from 'react';
 import '../styles/AddProperty.css';
+import Alert from './Alert';
 
 const AddProperty = () => {
     const initialState = {
@@ -13,24 +14,40 @@ const AddProperty = () => {
             price: '',
             email: '',
         },
+        alert: {
+            message: '',
+            isSuccess: false,
+        },
     };
     const [fields, setFields] = useState(initialState.fields);
+    const [alert, setAlert] = useState(initialState.alert);
 
     const handleAddProperty = event => {
         event.preventDefault();
+        setAlert({ message: '', isSuccess: false });
 
         axios
             .post('http://localhost:4000/api/v1/PropertyListing', {
                 fields,
             })
-            .then(res => {
-                console.log(res);
-                console.log(res.fields);
-                console.log(fields);
-            })
-            .catch(err => {
-                console.log(err);
-            });
+            .then(() =>
+                setAlert({ message: 'Property Added', isSuccess: true }),
+            )
+
+            // (res => {
+            //     console.log(res);
+            //     console.log(res.fields);
+            //     console.log(fields);
+            // })
+            .catch(() =>
+                setAlert({
+                    message: 'Server error, please try again later',
+                    isSuccess: false,
+                }),
+            );
+        // (err => {
+        //     console.log(err);
+        // });
     };
     const handleFieldChange = event => {
         setFields({ ...fields, [event.target.name]: event.target.value });
@@ -38,6 +55,7 @@ const AddProperty = () => {
 
     return (
         <div className="properties">
+            <Alert message={alert.message} success={alert.isSuccess} />
             Add Property Page
             <form className="properties-grid" onSubmit={handleAddProperty}>
                 <label htmlFor="title">
