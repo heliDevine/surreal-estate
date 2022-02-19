@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PropertyCard renders correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="property-details"
+  >
+    Property details
+    <div
+      class="property-title"
+    >
+      title: test
+    </div>
+    <div
+      class="property-type"
+    >
+      type: test
+    </div>
+    <div
+      class="property-bathrooms"
+    >
+      bathrooms: 2
+    </div>
+    <div
+      class="property-bedrooms"
+    >
+      bedrooms: 3
+    </div>
+    <div
+      class="property-price"
+    >
+      price: 140000
+    </div>
+    <div
+      class="property-city"
+    >
+      city: Manchester
+    </div>
+    <div
+      class="property-email"
+    >
+      city: test@email.com
+    </div>
+  </div>
+</DocumentFragment>
+`;
