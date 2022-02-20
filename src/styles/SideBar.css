@@ -1,0 +1,25 @@
+.sidebar {
+    background-color: white;
+    border-bottom: 1px solid grey;
+}
+
+.sidebar-logo {
+    max-width: 200px;
+}
+
+.sidebar-links {
+    margin: 0;
+    padding: 0;
+    float: left;
+}
+
+.sidebar-links-item {
+    margin: 0;
+    padding: 24px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.sidebar-links-item > * {
+    text-decoration: none;
+}
