@@ -13,7 +13,7 @@ const PropertyCard = props => {
             <div className="property-bedrooms">bedrooms: {bedrooms}</div>
             <div className="property-price">price: {price}</div>
             <div className="property-city">city: {city}</div>
-            <div className="property-email">city: {email}</div>
+            <div className="property-email">email: {email}</div>
         </div>
     );
 };

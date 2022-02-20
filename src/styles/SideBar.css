@@ -10,14 +10,12 @@
 .sidebar-links {
     margin: 0;
     padding: 0;
-    float: left;
+    float: right;
 }
 
 .sidebar-links-item {
     margin: 0;
     padding: 24px;
-    display: inline-block;
-    vertical-align: middle;
 }
 
 .sidebar-links-item > * {
