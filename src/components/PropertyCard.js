@@ -1,4 +1,3 @@
-// this component will show properties list
 import React from 'react';
 import PropTypes from 'prop-types';
 

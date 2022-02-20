@@ -1,7 +1,7 @@
-.Alert {
+/* .Alert {
     border-color: red;
     border-color: green;
-}
+} */
 /* .Alert {
     padding: 5px;
     margin-bottom: 5px;
@@ -22,3 +22,23 @@
     background-color: lightpink;
     color: red;
   } */
+.Alert {
+    padding: 5px;
+    margin-bottom: 5px;
+}
+
+.Alert:empty {
+    display: none;
+}
+
+.alert-success {
+    border: 1px solid lightgreen;
+    background-color: lightgreen;
+    color: green;
+}
+
+.alert-error {
+    border: 1px solid lightpink;
+    background-color: lightpink;
+    color: red;
+}

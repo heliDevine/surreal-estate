@@ -11,7 +11,7 @@ const App = () => {
         <div className="App">
             <BrowserRouter>
                 <NavBar />
-                <h2 className="title">Surreal Estate</h2>
+                {/* <h2 className="title">Surreal Estate</h2> */}
 
                 <Switch>
                     <Route exact path="/" component={Properties} />
